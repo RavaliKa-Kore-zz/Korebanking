@@ -59,7 +59,7 @@ app.get('/',function (req,res){
 			res.sendFile(data);
 	});	*/
 	
-	res.sendfile('/data/index.html', {root: __dirname })
+	res.sendfile('/data/index.html')
 	
 	
 	
