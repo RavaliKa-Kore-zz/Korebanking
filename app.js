@@ -17,6 +17,9 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+//app.set('views', path.join(__dirname, 'views'));
+//app.engine('html', require('ejs').renderFile);
+//app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -39,6 +42,24 @@ app.get('/data/:fileName',function (req,res){
 		console.log(data);
 			res.send(JSON.parse(data.toString()));
 	});
+	
+	
+	
+	
+});
+
+
+app.get('/',function (req,res){
+
+	//var fileName = req.params.fileName;
+	//console.log(fileName);
+	
+	/*fs.readFile('./data/index.html',function(err,data){
+		console.log(data);
+			res.sendFile(data);
+	});	*/
+	
+	res.sendfile('/data/index.html', {root: __dirname })
 	
 	
 	
