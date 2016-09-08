@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 
+
 //var routes = require('./routes/index');
 //var users = require('./routes/users');
 //var flights = require('./routes/flights');
@@ -31,7 +32,7 @@ app.use(bodyParser.urlencoded({limit: '50mb',extended: true}));
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
-app.use('/static', express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/data/:fileName',function (req,res){
 
@@ -59,7 +60,7 @@ app.get('/',function (req,res){
 			res.sendFile(data);
 	});	*/
 	
-	res.sendfile('./UI/index.html')
+	return res.redirect(301,'/UI/index.html')
 	
 	
 	
