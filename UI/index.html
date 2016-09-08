@@ -1,10 +1,10 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<script src="libs/jquery.js" type="text/javascript"></script>
-		<script src="libs/jquery.tmpl.min.js" type="text/javascript"></script>
-		<script src="libs/jquery-ui.min.js" type="text/javascript"></script>
-		<link href="libs/jquery-ui.min.css" rel="stylesheet"></link>
+		<script src="lib/jquery.js" type="text/javascript"></script>
+		<script src="lib/jquery.tmpl.min.js" type="text/javascript"></script>
+		<script src="lib/jquery-ui.min.js" type="text/javascript"></script>
+		<link href="lib/jquery-ui.min.css" rel="stylesheet"></link>
 		
 		<script src="./kore-bot-sdk-client.js"></script>
 		<script src="chatWindow.js" type="text/javascript"></script>
@@ -15,7 +15,7 @@
 
 				// Client has to fill the claims and call the callback.
 				$.ajax({
-					url: "https://qa1.kore.com/api/users/sts",
+					url: "https://qa1-bots.kore.com/api/users/sts",
 					type: 'post',
 					headers: {
 						Authorization: "bearer xyz------"
@@ -31,7 +31,7 @@
 			
 			var botOptions = {};
 			botOptions.logLevel = 'debug';
-			botOptions.koreAPIUrl = "https://qa1.kore.com/api/";
+			botOptions.koreAPIUrl = "https://qa1-bots.kore.com/api/";
 			botOptions.assertionFn = assertion;
 			botOptions.isLoggedIn = false; // false: triggers anonymus flow. set it to true for log-in flow.
 			//botOptions.clientId   = "cs-d8862690-fa2a-5dc8-b5eb-e9e06a6269ab";
@@ -51,7 +51,7 @@
 		});
 		</script>
 	</head>
-	<body background="./libs/images/screen.png">
+	<body background="./lib/images/screen.png">
 		<div id="chatContainer" >
 		<button class="openChatWindow" style="float:right;margin:1% 4%;">Open Chat Window</button>
 		</div>
